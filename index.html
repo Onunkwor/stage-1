@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Stage 1</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
   </head>
   <body>
     <section>
       <div class="container">
-        <div class="intro hidden">
-          <h1 data-testid="slackUserName">Hello I'm Onunkwor Raphael</h1>
+        <div class="intro">
+          <h1 data-testid="slackUserName">Onunkwor Raphael</h1>
           <p data-testid="myTrack">Frontend</p>
         </div>
 
@@ -28,7 +27,7 @@
           </div>
 
           <div class="universalTime hidden">
-            <p id="utcTime" data-testid="currentUCTTime"></p>
+            <p id="utcTimeShortMilliseconds" data-testid="currentUCTTime"></p>
           </div>
         </div>
 
@@ -41,5 +40,7 @@
         </div>
       </div>
     </section>
+
+    <script src="app.js"></script>
   </body>
 </html>

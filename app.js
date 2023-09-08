@@ -1,16 +1,3 @@
-const elements = document.querySelectorAll(".hidden");
-
-const observer = new IntersectionObserver((enteries) => {
-  enteries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
-elements.forEach((element) => observer.observe(element));
-
 const dayOfWeekElement = document.getElementById("dayOfWeek");
 
 const daysOfWeek = [
@@ -30,28 +17,21 @@ const currentDayIndex = currentDate.getDay();
 
 dayOfWeekElement.textContent = daysOfWeek[currentDayIndex];
 
-function updateUTCTime() {
-  // Create a new Date object for the current UTC time
+function updateUTCTimeShortMilliseconds() {
   const currentUTCDate = new Date();
 
-  // Get the UTC components: hours, minutes, and seconds
-  const hours = currentUTCDate.getUTCHours();
-  const minutes = currentUTCDate.getUTCMinutes();
-  const seconds = currentUTCDate.getUTCSeconds();
+  const currentTimeUTCInMilliseconds = currentUTCDate.getTime();
 
-  // Format the time as a string (HH:MM:SS)
-  const currentTimeUTC = `${hours
-    .toString()
-    .padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  const millisecondsRounded = Math.floor(currentTimeUTCInMilliseconds / 10); // This rounds to the nearest 10 milliseconds
 
-  // Display the UTC time in the "utcTime" paragraph
-  document.getElementById("utcTime").textContent = currentTimeUTC;
+  // Display the shortened UTC time in milliseconds
+  let utcTime = document.querySelector("#utcTimeShortMilliseconds");
+
+  utcTime.textContent = millisecondsRounded;
 }
 
-// Call the updateUTCTime function to initially display the time
-updateUTCTime();
+// Call the updateUTCTimeShortMilliseconds function to initially display the time
+updateUTCTimeShortMilliseconds();
 
-// Update the UTC time every second
-setInterval(updateUTCTime, 1000);
+// Update the UTC time in shortened milliseconds every second
+setInterval(updateUTCTimeShortMilliseconds, 1000);

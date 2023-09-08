@@ -39,32 +39,17 @@ p {
 }
 
 .rounded-container img {
-  max-width: 20rem;
+  max-width: 10rem;
   object-fit: cover;
   border-radius: 40%;
-}
-.hidden {
-  opacity: 0;
-  filter: blur(8px);
-  transform: translateX(100%);
-  transition: all 1s;
-  overflow: hidden;
-}
-.show {
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0);
-}
-.time {
-  overflow: hidden;
 }
 .currentDay,
 .universalTime {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   font-size: 2rem;
+  padding-top: 0.5rem;
 }
 .github-btn {
   display: flex;
@@ -76,4 +61,5 @@ p {
   border-radius: 1rem;
   margin-bottom: 2rem;
   border: 1px solid var(--text-color);
+  padding-top: 0.5rem;
 }
