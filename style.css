@@ -38,7 +38,7 @@ p {
   margin-top: 3rem;
 }
 
-.rounded-container img {
+.w-10 {
   max-width: 10rem;
   object-fit: cover;
   border-radius: 40%;

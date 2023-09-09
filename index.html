@@ -15,25 +15,29 @@
           <p data-testid="myTrack">Frontend</p>
         </div>
 
-        <div class="img-container hidden" data-testid="slackDisplayImage">
-          <div class="rounded-container">
-            <img src="img.jpg" alt="raphael" />
-          </div>
+        <div class="img-container">
+          <img
+            class="w-10"
+            src="img.jpg"
+            alt="Onunkwor Raphael"
+            data-testid="slackDisplayImage"
+          />
         </div>
 
         <div class="time">
-          <div class="currentDay hidden">
+          <div class="currentDay">
             <h3 id="dayOfWeek" data-testid="currentDayOfTheWeek"></h3>
           </div>
 
-          <div class="universalTime hidden">
+          <div class="universalTime">
             <p id="utcTimeShortMilliseconds" data-testid="currentUCTTime"></p>
           </div>
         </div>
 
-        <div class="github-btn" data-testid="githubURL">
+        <div class="github-btn">
           <button
             onclick="window.location.href = 'https://github.com/Onunkwor?tab=repositories';"
+            data-testid="githubURL"
           >
             GitHub
           </button>
